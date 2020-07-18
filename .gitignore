@@ -127,3 +127,10 @@ dmypy.json
 
 # Pyre type checker
 .pyre/
+
+
+# app secrets
+settings.json
+advanced_settings.json
+secrets.py
+mysecrets.py
