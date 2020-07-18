@@ -19,6 +19,10 @@
                 'X-Requested-With': 'XMLHttpRequest'
               },
               contentType: 'application/JSON; charset=utf-8',
+              success: function(result) {
+                document.getElementsByTagName('h1')[0].innerHTML 
+                  = "Welcome, " + result + "!";
+              },
               data: JSON.stringify({credential: response.credential})
             });
           }
