@@ -9,7 +9,19 @@
     <script>
       window.onload = function () {
         google.accounts.id.initialize({
-          client_id: '{{one_tap_client_id}}'
+          client_id: '{{one_tap_client_id}}',
+          callback: function (credentialResponse) {
+            let response = credentialResponse;
+            $.ajax({
+                type: 'POST',
+                url: '/one-tap-login/',
+                headers: {
+                'X-Requested-With': 'XMLHttpRequest'
+              },
+              contentType: 'application/JSON; charset=utf-8',
+              data: JSON.stringify({credential: response.credential})
+            });
+          }
         });
         google.accounts.id.prompt();
       };

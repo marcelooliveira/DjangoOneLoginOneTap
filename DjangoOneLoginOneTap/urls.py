@@ -19,5 +19,6 @@ from DjangoOneLoginOneTap import views
 
 urlpatterns = [
     path('admin/', admin.site.urls),
-    path('', views.index, name='index')
+    path('', views.index, name='index'),
+    path('one-tap-login/', views.one_tap_login, name='one_tap_login')
 ]
